@@ -1,0 +1,13 @@
+# emacs
+*#*
+*~*
+*~#
+*/*#*
+*/*~*
+
+# julia
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+*.juliahistory
+
