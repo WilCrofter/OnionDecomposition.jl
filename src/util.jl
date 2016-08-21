@@ -12,5 +12,9 @@
                       ----13-14    17
 """
 function fig1()
-    
+    # v0[i] and v1[i] define an adjacency (edge)
+    v0 = [1, 2, 3, 4, 9, 9, 5, 6, 7, 7, 8, 8, 8, 8,15,15]
+    v1 = [2, 3, 4, 9,10,11, 6, 7,12,13,12,13,14,15,16,17]
+    # Since the graph is undirected, v1[i] and v0[i] are also adjacent
+    return sparse(vcat(v0,v1), vcat(v1,v0), ones(length(v0)+length(v1)))
 end
