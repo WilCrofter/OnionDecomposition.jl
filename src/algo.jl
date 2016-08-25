@@ -26,7 +26,6 @@ function OD{T}(A::AdjMatrix{T})
         while true
             # Initialize layer indices to those of all remaining vertices
             Lidx[1:m] = Vidx[1:m] # modifies Lidx in place
-            println("\n", core, ",", layer)
             # Reduce layer indices to those of all vertices with
             # degree <= core in the current subgraph
             Lidx[Vidx] &= (sum(A[Vidx,Vidx],2) .<= core)
