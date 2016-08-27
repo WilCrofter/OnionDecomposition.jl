@@ -44,3 +44,8 @@ function OD{T}(A::AdjMatrix{T})
     end
     return corelist, layerlist
 end
+
+
+#= ONE
+**Claim:** *A node of degree d, coreness k, and layer l, must be connected to other nodes in the following fashion. If the node is in the first layer of its core, it must have exactly k links to nodes of layers greater than or equal to l.* 
+=#

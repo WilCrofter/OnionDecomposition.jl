@@ -25,3 +25,17 @@ function fig1_OD()
     layers = [1, 2, 3, 4, 5, 6, 8, 8, 2, 1, 1, 7, 8, 7, 2, 1, 1]
     return cores, layers
 end
+
+""" empty_core()
+(Sparse) adjacency matrix for the following graph which has cores of "coreness" 1 and 3, but none of 2.
+     2-----
+    / \   |
+5--1---4  |
+    \ /   |
+     3-----
+"""
+function empty_core()
+    v0 = [1, 1, 1, 1, 2, 2, 3]
+    v1 = [2, 3, 4, 5, 3, 4, 4]
+    return sparse(vcat(v0,v1), vcat(v1,v0), ones(Int,length(v0)+length(v1)))
+end
