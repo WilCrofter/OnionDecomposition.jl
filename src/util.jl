@@ -1,15 +1,18 @@
-#= Reference:
- Hébert-Dufresne, L. et al. Multi-scale structure and topological anomaly detection via a new network statistic: The onion decomposition. Sci. Rep. 6, 31708; doi: 10.1038/srep31708 (2016)
-=#
 
-""" fig1()
+export fig1, fig1_OD, empty_core
+
+
+""" 
+    fig1()
+
 (Sparse) adjacency matrix for the graph of Figure 1 in the reference, specifically:
-
+```
      10--9--11        12-----      16
          |            |     |      |
 1--2--3--4--5--6------7-----8------15
-                      |    / \     |
+                      |    ╱ ╲     |
                       ----13-14    17
+```
 """
 function fig1()
     # v0[i] and v1[i] define an adjacency (edge)
@@ -26,16 +29,21 @@ function fig1_OD()
     return cores, layers
 end
 
-""" empty_core()
+""" 
+    empty_core()
+
 (Sparse) adjacency matrix for the following graph which has cores of "coreness" 1 and 3, but none of 2.
+```
      2-----
-    / \   |
+    ╱ ╲   |
 5--1---4  |
-    \ /   |
+    ╲ ╱   |
      3-----
+```
 """
 function empty_core()
     v0 = [1, 1, 1, 1, 2, 2, 3]
     v1 = [2, 3, 4, 5, 3, 4, 4]
     return sparse(vcat(v0,v1), vcat(v1,v0), ones(Int,length(v0)+length(v1)))
 end
+
